@@ -68,7 +68,7 @@ button:focus {
 }
 
 #inicia-reconhecimento {
-    background-color: #1da7da;
+    background-color: #4A1AD9;
 }
 
 #inicia-reconhecimento:hover {
@@ -79,11 +79,11 @@ button:focus {
 }
 
 #pausa-reconhecimento {
-    background-color: #1da7da;
+    background-color: #4A1AD9;
 }
 
 #read-note-btn {
-    background-color: #1da7da;
+    background-color: #4A1AD9;
 }
 
 #read-note-btn:hover {
@@ -101,7 +101,7 @@ button:focus {
 }
 
 #save-note-btn {
-    background-color: #1da7da;
+    background-color: #4A1AD9;
 }
 
 #save-note-btn:hover {
