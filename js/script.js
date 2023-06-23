@@ -85,11 +85,7 @@ $('#pausa-reconhecimento').on('click', function(e) {
   reconhecimento.stop();
   instrucoes.text('Reconhecimento de voz pausado');
 });
-
-// Sincronizando o texto dentro no textArea
-noteTextarea.on('input', function() {
-  noteContent = $(this).val();
-})
+c
 
 $('#read-note-btn').on('click', function(e){
   reconhecimento.stop();
