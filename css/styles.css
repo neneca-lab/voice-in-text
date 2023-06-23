@@ -67,18 +67,18 @@ button:focus {
     border: 2px #1da7da dotted;
 }
 
-#start-record-btn {
+#inicia-reconhecimento {
     background-color: #1da7da;
 }
 
-#start-record-btn:hover {
+#inicia-reconhecimento:hover {
     border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
     background-color: transparent;
 }
 
-#pause-record-btn {
+#pausa-reconhecimento {
     background-color: #1da7da;
 }
 
@@ -93,7 +93,7 @@ button:focus {
     background-color: transparent;
 }
 
-#pause-record-btn:hover{
+#pausa-reconhecimento:hover{
     border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
@@ -116,7 +116,7 @@ button:focus {
     color: white;
 }
 
-#notes {
+#notas {
     padding-top: 20px;
     color: white;
 }

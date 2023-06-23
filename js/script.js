@@ -10,13 +10,13 @@ catch(e) {
 
 
 var noteTextarea = $('#note-textarea');
-var instructions = $('#inst-gravacao');
-var notesList = $('ul#notes');
+var instrucoes = $('#inst-gravacao');
+var listaNotas = $('ul#notas');
 
 var noteContent = '';
 
-var notes = getAllNotes();
-renderNotes(notes);
+var notas = getAllNotes();
+renderNotes(notas);
 
 // ler nota
 
@@ -55,16 +55,16 @@ reconhecimento.onresult = function(event) {
 };
 
 reconhecimento.onstart = function() { 
-  instructions.text('Reconhecimento de voz ativado. Tente falar no microfone.');
+  instrucoes.text('Reconhecimento de voz ativado. Tente falar no microfone.');
 }
 
 reconhecimento.onspeechend = function() {
-  instructions.text('Você ficou quieto por um tempo, então o reconhecimento de voz foi desativado.');
+  instrucoes.text('Você ficou quieto por um tempo, então o reconhecimento de voz foi desativado.');
 }
 
 reconhecimento.onerror = function(event) {
   if(event.error == 'no-speech') {
-    instructions.text('Nenhuma fala foi detectada. Tente novamente.');  
+    instrucoes.text('Nenhuma fala foi detectada. Tente novamente.');  
   };
 }
 
@@ -73,7 +73,7 @@ reconhecimento.onerror = function(event) {
 // Botões e entrada do aplicativo 
 
 
-$('#start-record-btn').on('click', function(e) {
+$('#inicia-reconhecimento').on('click', function(e) {
   if (noteContent.length) {
     noteContent += ' ';
   }
@@ -81,9 +81,9 @@ $('#start-record-btn').on('click', function(e) {
 });
 
 
-$('#pause-record-btn').on('click', function(e) {
+$('#pausa-reconhecimento').on('click', function(e) {
   reconhecimento.stop();
-  instructions.text('Reconhecimento de voz pausado');
+  instrucoes.text('Reconhecimento de voz pausado');
 });
 
 // Sincronizando o texto dentro no textArea
@@ -91,11 +91,19 @@ noteTextarea.on('input', function() {
   noteContent = $(this).val();
 })
 
+$('#read-note-btn').on('click', function(e){
+  reconhecimento.stop();
+
+  if(!noteContent.length){
+    instrucoes.text('Não foi possível ler a nota, por favor insira algo.');
+  }
+})
+
 $('#save-note-btn').on('click', function(e) {
   reconhecimento.stop();
 
   if(!noteContent.length) {
-    instructions.text('Não foi possível salvar a nota vazia. Adicione uma mensagem à sua nota');
+    instrucoes.text('Não foi possível salvar a nota vazia. Adicione uma mensagem à sua nota.');
   }
   else {
     // Salvando a nota.
@@ -105,13 +113,13 @@ $('#save-note-btn').on('click', function(e) {
     noteContent = '';
     renderNotes(getAllNotes());
     noteTextarea.val('');
-    instructions.text('Nota salva com sucesso.');
+    instrucoes.text('Nota salva com sucesso.');
   }
       
 })
 
 
-notesList.on('click', function(e) {
+listaNotas.on('click', function(e) {
   e.preventDefault();
   var target = $(e.target);
 
@@ -146,24 +154,24 @@ function readOutLoud(message) {
 }
 
 
-function renderNotes(notes) {
+function renderNotes(notas) {
   var html = '';
-  if(notes.length) {
-    notes.forEach(function(note) {
+  if(notas.length) {
+    notas.forEach(function(notas) {
       html+= `<li class="note">
         <p class="header">
-          <span class="date">${note.date}</span>
+          <span class="date">${notas.date}</span>
           <a href="#" class="listen-note" title="Lista de notas">Lista de notas</a>
           <a href="#" class="delete-note" title="Delete">Apagar</a>
         </p>
-        <p class="content">${note.content}</p>
+        <p class="content">${notas.content}</p>
       </li>`;    
     });
   }
   else {
     html = '<li><p class="content">Você ainda não possui notas</p></li>';
   }
-  notesList.html(html);
+  listaNotas.html(html);
 }
 
 
@@ -173,19 +181,19 @@ function saveNote(dateTime, content) {
 
 
 function getAllNotes() {
-  var notes = [];
+  var notas = [];
   var key;
   for (var i = 0; i < localStorage.length; i++) {
     key = localStorage.key(i);
 
     if(key.substring(0,5) == 'note-') {
-      notes.push({
+      notas.push({
         date: key.replace('note-',''),
         content: localStorage.getItem(localStorage.key(i))
       });
     } 
   }
-  return notes;
+  return notas;
 }
 
 
