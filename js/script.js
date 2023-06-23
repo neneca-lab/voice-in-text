@@ -95,7 +95,7 @@ $('#read-note-btn').on('click', function(e){
   reconhecimento.stop();
 
   if(!noteContent.length){
-    instrucoes.text('Não foi possível ler a nota, por favor insira algo.');
+    instrucoes.text('Não foi possível ler a nota, por favor digite algo.');
   }
 })
 
@@ -161,7 +161,7 @@ function renderNotes(notas) {
       html+= `<li class="note">
         <p class="header">
           <span class="date">${notas.date}</span>
-          <a href="#" class="listen-note" title="Lista de notas">Lista de notas</a>
+          <a href="#" class="listen-note" title="Lista de notas">Ler nota</a>
           <a href="#" class="delete-note" title="Delete">Apagar</a>
         </p>
         <p class="content">${notas.content}</p>
