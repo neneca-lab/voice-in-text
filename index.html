@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Voz para texto</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="/css/styles.css">
+
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>Teste de voz</h1>
+
+            <h3 class="no-browser-support">Desculpe, seu navegador não suporta a Web Speech API. Tente abrir esta demonstração no Google Chrome.</h3>
+
+            <div class="app"> 
+                <h3>Adicione uma nova nota</h3>
+                <div class="input-single">
+                    <textarea id="note-textarea" placeholder="Crie uma nova nota digitando ou usando o reconhecimento de voz." rows="6"></textarea>
+                </div>         
+                <button id="start-record-btn" title="Iniciar reconhecimento">Iniciar reconhecimento</button>
+                <button id="pause-record-btn" title="Pausar reconhecimento">Pausar reconhecimento</button>
+                <button id="read-note-btn" title="Ler nota">Ler nota</button>
+                <button id="save-note-btn" title="Salvar nota">Salvar nota</button>   
+                <p id="inst-gravacao">Pressione o <strong>Iniciar Reconhecimento </strong>e permita o acesso.</p>
+                
+                <h3>Minhas notas</h3>
+                <ul id="notes">
+                    <li>
+                        <p class="no-notes">Você ainda não possui notas</p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/script.js"></script>
+
+
+    </body>
+</html>
+
+
