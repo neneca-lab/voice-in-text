@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
 
 
+::selection {
+    background-color: #4A1AD9;
+}
+
+
 body {
     background-image: linear-gradient(90deg, rgb(2, 2, 27), rgb(2, 2, 40));
     color: white;
