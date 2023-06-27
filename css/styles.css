@@ -41,17 +41,6 @@ button:focus {
     margin-bottom: 20px;
 }
 
-.page-description {
-    font-size: 1.1rem;
-    margin: 0 auto;
-}
-
-.tz-link {
-    font-size: 1em;
-    color: #1da7da;
-    text-decoration: none;
-}
-
 .no-browser-support {
     display: none;
     font-size: 1.2rem;

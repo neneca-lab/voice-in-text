@@ -161,8 +161,8 @@ function renderNotes(notas) {
       html+= `<li class="note">
         <p class="header">
           <span class="date">${notas.date}</span>
-          <a href="#" class="listen-note" title="Lista de notas">Ler nota</a>
-          <a href="#" class="delete-note" title="Delete">Apagar</a>
+          <a href="#" class="listen-note" style="color: #4A1AD9;" title="Lista de notas">Ler nota</a>
+          <a href="#" class="delete-note" style="color: #4A1AD9;" title="Delete">Apagar</a>
         </p>
         <p class="content">${notas.content}</p>
       </li>`;    
