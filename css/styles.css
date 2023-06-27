@@ -63,52 +63,57 @@ button:focus {
     border: none;
 }
 
-#note-textarea:hover {
-    border: 2px #1da7da dotted;
-}
 
 #inicia-reconhecimento {
     background-color: #4A1AD9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #inicia-reconhecimento:hover {
-    border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #pausa-reconhecimento {
     background-color: #4A1AD9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #read-note-btn {
     background-color: #4A1AD9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #read-note-btn:hover {
-    border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #pausa-reconhecimento:hover{
-    border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #save-note-btn {
     background-color: #4A1AD9;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #save-note-btn:hover {
-    border: 2px white dotted;
     scale: 1.10;
     transition: all .2s ease-in-out;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #inst-gravacao {
@@ -119,6 +124,10 @@ button:focus {
 #notas {
     padding-top: 20px;
     color: white;
+}
+
+footer {
+    text-align: center;
 }
 
 .note .header {

@@ -13,7 +13,7 @@
     <body>
         <div class="container">
 
-            <h1>Teste de voz e leitura de texto</h1>
+            <h1>Transforme sua voz em texto</h1>
 
             <h3 class="no-browser-support">Desculpe, seu navegador não suporta a Web Speech API. Tente abrir esta demonstração no Google Chrome.</h3>
 
@@ -22,11 +22,12 @@
                 <div class="input-single">
                     <textarea id="note-textarea" placeholder="Crie uma nova nota digitando ou usando o reconhecimento de voz." rows="6"></textarea>
                 </div>         
-                <button id="inicia-reconhecimento" title="Iniciar reconhecimento">Iniciar reconhecimento</button>
-                <button id="pausa-reconhecimento" title="Pausar reconhecimento">Pausar reconhecimento</button>
-                <button id="read-note-btn" title="Ler nota">Ler nota</button>
-                <button id="save-note-btn" title="Salvar nota">Salvar nota</button>   
+                <i class="fa-solid fa-microphone" id="inicia-reconhecimento" title="Inicie o reconhecimento de voz"></i>
+                <i class="fa-solid fa-pause" id="pausa-reconhecimento" title="Pause o reconhecimento"></i>
+                <i class="fa-brands fa-readme" id="read-note-btn" title="Leia a nota"></i>
+                <i class="fa-solid fa-floppy-disk" id="save-note-btn" title="Salve a nota"></i>
                 <p id="inst-gravacao">Pressione o <strong>Iniciar Reconhecimento </strong>e permita o acesso.</p>
+                
                 
                 <h3>Minhas notas:</h3>
                 <ul id="notas">
@@ -39,7 +40,10 @@
 
         </div>
 
+        <footer>Developed by <i>Huan Salomão</i></footer>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/45461602d5.js" crossorigin="anonymous"></script>
         <script src="/js/script.js"></script>
 
 
